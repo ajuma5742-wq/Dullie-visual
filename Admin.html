@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>DULLIE VISUAL | Admin Login</title>
+
+  <!-- SUPABASE -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080808;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .login-box {
+      width: 100%;
+      max-width: 400px;
+      background: #111;
+      border: 1px solid #292929;
+      padding: 35px 25px;
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 25px;
+      font-weight: bold;
+      letter-spacing: 4px;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #888;
+      font-size: 14px;
+      letter-spacing: 2px;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 20px;
+      background: #1b1b1b;
+      border: 1px solid #333;
+      color: white;
+      font-size: 15px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #777;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      background: white;
+      color: black;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    #message {
+      text-align: center;
+      margin-top: 18px;
+      font-size: 14px;
+      min-height: 20px;
+    }
+
+    .back-home {
+      display: block;
+      text-align: center;
+      margin-top: 25px;
+      color: #777;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .back-home:hover {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="login-box">
+
+    <div class="logo">DULLIE VISUAL</div>
+
+    <div class="subtitle">
+      ADMIN LOGIN
+    </div>
+
+    <form id="loginForm">
+
+      <label for="email">Email</label>
+
+      <input
+        type="email"
+        id="email"
+        placeholder="Enter admin email"
+        required
+      >
+
+      <label for="password">Password</label>
+
+      <input
+        type="password"
+        id="password"
+        placeholder="Enter password"
+        required
+      >
+
+      <button type="submit" id="loginButton">
+        LOGIN
+      </button>
+
+    </form>
+
+    <div id="message"></div>
+
+    <a href="index.html" class="back-home">
+      ← Back to Website
+    </a>
+
+  </div>
+
+
+  <script>
+
+    // ==========================================
+    // SUPABASE CONNECTION
+    // ==========================================
+
+    const SUPABASE_URL = "<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>";
+
+    const SUPABASE_KEY = "sb_publishable_IreC9Sb7rm4BeXPk55TYAg_x_VRmn65";
+
+    const supabaseClient = window.supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_KEY
+    );
+
+
+    // ==========================================
+    // LOGIN
+    // ==========================================
+
+    const loginForm = document.getElementById("loginForm");
+
+    const loginButton = document.getElementById("loginButton");
+
+    const message = document.getElementById("message");
+
+
+    loginForm.addEventListener("submit", async function(event) {
+
+      event.preventDefault();
+
+      const email =
+        document.getElementById("email").value.trim();
+
+      const password =
+        document.getElementById("password").value;
+
+
+      message.textContent = "";
+
+      loginButton.disabled = true;
+
+      loginButton.textContent = "LOGGING IN...";
+
+
+      try {
+
+        const { data, error } =
+          await supabaseClient.auth.signInWithPassword({
+            email: email,
+            password: password
+          });
+
+
+        if (error) {
+          throw error;
+        }
+
+
+        if (data.user) {
+
+          message.style.color = "#7CFC00";
+
+          message.textContent = "Login successful...";
+
+
+          // Go to Admin Dashboard
+          setTimeout(function() {
+
+            window.location.href =
+              "admin-dashboard.html";
+
+          }, 800);
+
+        }
+
+      } catch (error) {
+
+        message.style.color = "#ff7777";
+
+        message.textContent =
+          "Invalid email or password.";
+
+        loginButton.disabled = false;
+
+        loginButton.textContent = "LOGIN";
+
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
