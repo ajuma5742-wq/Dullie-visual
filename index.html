@@ -10,44 +10,16 @@
 </head>
 
 <body>
+  <nav>
+  <div class="logo">DULLIE VISUAL</div>
 
-  .menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 28px;
-  cursor: pointer;
-}
-
-/* MOBILE MENU */
-@media (max-width: 768px) {
-
-  nav {
-    padding: 15px 20px;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .menu {
-    display: none;
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    flex-direction: column;
-    gap: 20px;
-    background: rgba(0, 0, 0, 0.95);
-    padding: 20px 25px;
-    border-radius: 10px;
-  }
-
-  .menu.active {
-    display: flex;
-  }
-}
-
+  <div class="menu">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#work">My Work</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
   <!-- HERO -->
 
   <section class="hero" id="home">
