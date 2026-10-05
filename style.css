@@ -1,0 +1,419 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #080808;
+  color: white;
+}
+
+
+/* NAVIGATION */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.85);
+
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.menu {
+  display: flex;
+  gap: 25px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+
+/* HERO */
+
+.hero {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  padding: 120px 30px 60px;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.65),
+      rgba(0,0,0,0.85)
+    ),
+
+    url("https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1600&q=80")
+
+    center / cover no-repeat;
+}
+
+.hero-content {
+  max-width: 850px;
+}
+
+.small-title {
+  color: #cccccc;
+  letter-spacing: 3px;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(45px, 10vw, 90px);
+  line-height: 0.95;
+  margin-bottom: 25px;
+  letter-spacing: -2px;
+}
+
+.hero-content > p:not(.small-title) {
+  max-width: 600px;
+
+  color: #d0d0d0;
+
+  line-height: 1.7;
+
+  font-size: 17px;
+
+  margin-bottom: 30px;
+}
+
+.hero-button {
+  display: inline-block;
+
+  padding: 15px 25px;
+
+  background: white;
+  color: black;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  font-size: 13px;
+
+  letter-spacing: 1px;
+}
+
+
+/* ABOUT */
+
+.about,
+.work,
+.contact {
+  padding: 100px 30px;
+  text-align: center;
+}
+
+.about {
+  max-width: 800px;
+  margin: auto;
+}
+
+h2 {
+  font-size: 35px;
+  margin-bottom: 25px;
+}
+
+.about p,
+.contact p {
+  color: #bbb;
+
+  line-height: 1.8;
+
+  font-size: 17px;
+}
+
+
+/* WORK */
+
+.section-label {
+  color: #999;
+
+  font-size: 12px;
+
+  letter-spacing: 4px;
+
+  margin-bottom: 15px;
+}
+
+.work-intro {
+  max-width: 650px;
+
+  margin: 0 auto 45px;
+
+  color: #aaa;
+
+  line-height: 1.7;
+}
+
+.portfolio {
+  max-width: 1100px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 25px;
+}
+
+.project {
+  position: relative;
+
+  overflow: hidden;
+
+  background: #111;
+
+  min-height: 300px;
+}
+
+.project:first-child {
+  grid-column: span 2;
+}
+
+.project img {
+  width: 100%;
+
+  height: 100%;
+
+  min-height: 300px;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform 0.5s ease;
+}
+
+.project:hover img {
+  transform: scale(1.05);
+}
+
+.project-info {
+  position: absolute;
+
+  bottom: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  padding: 30px;
+
+  background:
+    linear-gradient(
+      transparent,
+      rgba(0,0,0,0.9)
+    );
+
+  text-align: left;
+}
+
+.project-info span {
+  font-size: 11px;
+
+  letter-spacing: 3px;
+
+  color: #ccc;
+}
+
+.project-info h3 {
+  margin-top: 8px;
+
+  font-size: 24px;
+}
+
+
+/* CONTACT */
+
+.contact {
+  background: #111;
+}
+
+.contact-intro {
+  max-width: 650px;
+
+  margin: 0 auto 35px;
+
+  color: #aaa;
+
+  line-height: 1.7;
+}
+
+.social-links {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 45px;
+}
+
+.social {
+  display: inline-block;
+
+  padding: 13px 22px;
+
+  border: 1px solid #444;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  transition: 0.3s;
+}
+
+.social:hover {
+  background: white;
+
+  color: black;
+}
+
+
+/* CONTACT FORM */
+
+.contact-form {
+  max-width: 650px;
+
+  margin: auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+
+  width: 100%;
+
+  padding: 16px;
+
+  background: #181818;
+
+  border: 1px solid #333;
+
+  color: white;
+
+  font-family: inherit;
+
+  font-size: 15px;
+
+  outline: none;
+}
+
+.contact-form textarea {
+
+  min-height: 160px;
+
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+
+  border-color: #777;
+}
+
+.contact-form button {
+
+  border: none;
+
+  padding: 16px;
+
+  background: white;
+
+  color: black;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  letter-spacing: 1px;
+}
+
+
+/* FOOTER */
+
+footer {
+
+  padding: 30px;
+
+  text-align: center;
+
+  color: #666;
+
+  font-size: 13px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  nav {
+    padding: 18px;
+  }
+
+  .menu {
+    gap: 10px;
+  }
+
+  .menu a {
+    font-size: 11px;
+  }
+
+  .hero {
+    padding: 120px 20px 60px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .portfolio {
+    grid-template-columns: 1fr;
+  }
+
+  .project:first-child {
+    grid-column: span 1;
+  }
+
+  .project,
+  .project img {
+    min-height: 260px;
+  }
+    }
