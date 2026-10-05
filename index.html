@@ -4,238 +4,175 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Dullie Visual</title>
+  <title>DULLIE VISUAL | Photography & Filmmaking</title>
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+  <!-- NAVIGATION -->
   <nav>
-  <div class="logo">DULLIE VISUAL</div>
+    <div class="logo">DULLIE VISUAL</div>
 
-  <div class="menu">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#work">My Work</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">
+      ☰
+    </button>
+
+    <div class="menu" id="mobileMenu">
+      <a href="#home" onclick="toggleMenu()">Home</a>
+      <a href="#about" onclick="toggleMenu()">About</a>
+      <a href="#work" onclick="toggleMenu()">My Work</a>
+      <a href="#contact" onclick="toggleMenu()">Contact</a>
+    </div>
+  </nav>
+
+
   <!-- HERO -->
-
-  <section class="hero" id="home">
-
+  <section id="home" class="hero">
     <div class="hero-content">
+      <p class="hero-small">PHOTOGRAPHER • VIDEOGRAPHER • FILMMAKER</p>
 
-      <p class="small-title">
-        FILMMAKER • PHOTOGRAPHER • VIDEOGRAPHER
-      </p>
-
-      <h1>
-        WE CREATE<br>
-        VISUAL STORIES.
-      </h1>
+      <h1>DULLIE VISUAL</h1>
 
       <p>
-        Cinematic films, photography and creative visual content
-        made to tell stories that people remember.
+        Telling stories through cinematic visuals,
+        photography and filmmaking.
       </p>
 
-      <a href="#work" class="hero-button">
-        VIEW MY WORK
-      </a>
-
+      <a href="#work" class="hero-button">VIEW MY WORK</a>
     </div>
-
   </section>
 
 
   <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <p class="section-small">ABOUT ME</p>
 
-  <section class="about" id="about">
+      <h2>Creating Stories Through Visuals</h2>
 
-    <p class="section-label">
-      WHO WE ARE
-    </p>
-
-    <h2>
-      ABOUT DULLIE VISUAL
-    </h2>
-
-    <p>
-      Dullie Visual is a creative visual brand focused on filmmaking,
-      photography and storytelling.
-    </p>
-
+      <p class="about-text">
+        Dullie Visual is a Tanzanian creative brand focused on
+        photography, filmmaking, music videos and cinematic storytelling.
+        Our goal is to turn real stories and emotions into powerful visuals.
+      </p>
+    </div>
   </section>
 
 
-  <!-- WORK -->
+  <!-- MY WORK -->
+  <section id="work" class="section work-section">
+    <div class="container">
 
-  <section class="work" id="work">
+      <p class="section-small">PORTFOLIO</p>
 
-    <p class="section-label">
-      SELECTED PROJECTS
-    </p>
+      <h2>My Work</h2>
 
-    <h2>
-      MY WORK
-    </h2>
+      <div class="portfolio">
 
-    <p class="work-intro">
-      A selection of films, music videos and photography projects
-      created by Dullie Visual.
-    </p>
-
-
-    <div class="portfolio">
-
-
-      <div class="project">
-
-        <img
+        <!-- PROJECT 1 -->
+        <div class="portfolio-card">
           <img
-  src="20261005_163829.jpg"
-  alt="Film Project"
->"
-        >
+            src="20261005_163829.jpg"
+            alt="Film Project"
+          >
 
-        <div class="project-info">
+          <div class="card-content">
+            <h3>CINEMATIC STORIES</h3>
+            <p>Film & Cinematic Production</p>
+          </div>
+        </div>
 
-          <span>FILM</span>
 
-          <h3>
-            CINEMATIC STORIES
-          </h3>
+        <!-- PROJECT 2 -->
+        <div class="portfolio-card">
+          <img
+            src="20261005_163912.jpg"
+            alt="DEKA Music Video"
+          >
 
+          <div class="card-content">
+            <h3>DEKA</h3>
+            <p>Music Video Production</p>
+          </div>
+        </div>
+
+
+        <!-- PROJECT 3 -->
+        <div class="portfolio-card">
+          <img
+            src="20261005_163937.jpg"
+            alt="Portrait Photography"
+          >
+
+          <div class="card-content">
+            <h3>PORTRAITS</h3>
+            <p>Photography & Creative Portraits</p>
+          </div>
         </div>
 
       </div>
-
-
-      <div class="project">
-
-        <img
-          <img
-  src="20261005_163912.jpg"
-  alt="DEKA Music Video"
->
-        >
-
-        <div class="project-info">
-
-          <span>MUSIC VIDEO</span>
-
-          <h3>
-            DEKA
-          </h3>
-
-        </div>
-
-      </div>
-
-
-      <div class="project">
-
-        <img
-          <img
-  src="20261005_163937.jpg"
-  alt="Portrait Photography"
->
-
-        <div class="project-info">
-
-          <span>PHOTOGRAPHY</span>
-
-          <h3>
-            PORTRAITS
-          </h3>
-
-        </div>
-
-      </div>
-
-
     </div>
-
   </section>
 
 
   <!-- CONTACT -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
 
-  <section class="contact" id="contact">
+      <p class="section-small">CONTACT</p>
 
-    <p class="section-label">
-      GET IN TOUCH
-    </p>
+      <h2>Let's Create Something Great</h2>
 
-    <h2>
-      LET'S CREATE TOGETHER
-    </h2>
-
-    <p class="contact-intro">
-      Have a film, music video, photography project or creative idea?
-      Let's talk about it.
-    </p>
+      <p class="contact-text">
+        Have a project, music video, photoshoot or film idea?
+        Let's work together.
+      </p>
 
 
-    <div class="social-links">
+      <div class="contact-links">
 
-      <a href="https://wa.me/255782126182" target="_blank">WhatsApp</a>
+        <a
+          href="https://wa.me/255782126182"
+          target="_blank"
+        >
+          WhatsApp
+        </a>
 
-<a href="https://www.instagram.com/dullievisual_255" target="_blank">Instagram</a>
+        <a
+          href="https://www.instagram.com/dullievisual_255"
+          target="_blank"
+        >
+          Instagram
+        </a>
 
-<a href="https://www.youtube.com/@DullieVisual2025" target="_blank">YouTube</a>
+        <a
+          href="https://www.youtube.com/@DullieVisual2025"
+          target="_blank"
+        >
+          YouTube
+        </a>
+
+      </div>
 
     </div>
-
-
-    <form class="contact-form">
-
-      <input
-        type="text"
-        placeholder="Your Name"
-        required
-      >
-
-      <input
-        type="email"
-        placeholder="Your Email"
-        required
-      >
-
-      <input
-        type="text"
-        placeholder="Project Type"
-        required
-      >
-
-      <textarea
-        placeholder="Tell me about your project"
-        required
-      ></textarea>
-
-      <button type="submit">
-        SEND MESSAGE
-      </button>
-
-    </form>
-
   </section>
 
 
   <!-- FOOTER -->
-
   <footer>
-
-    © 2026 Dullie Visual.
-    All Rights Reserved.
-
+    <p>© 2026 Dullie Visual. All Rights Reserved.</p>
   </footer>
-<script>
-function toggleMenu() {
-  const menu = document.getElementById("mobileMenu");
-  menu.classList.toggle("active");
-}
-</script>
+
+
+  <!-- MOBILE MENU SCRIPT -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.classList.toggle("active");
+    }
+  </script>
+
 </body>
-                                     </html>
+</html>
