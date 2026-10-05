@@ -17,7 +17,7 @@ body {
 
 /* NAVIGATION */
 
-.menu-toggle {
+..menu-toggle {
   display: none;
   background: none;
   border: none;
